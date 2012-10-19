@@ -50,7 +50,8 @@
         %div{:style => "color: #fff; text-align: right; vertical-align: top;"}
           %i "Duluth City Chickens: A group advocating for chicken raising in the city of Duluth, MN"
         %div{:style => "text-align: left; padding: 10px;"}
-          %a{:href => "/"}= image_tag "logo.png", :style => 'border: 0px;'
+          %a{:href => "/"}
+            %img{:src => "/images/logo.png", :style => 'border: 0px;'}
         %div{:style => "width: 100%; text-align: right; vertical-align: bottom;"}
           :javascript
                       %script{:src => "http://pagead2.googlesyndication.com/pagead/show_ads.js", :type => "text/javascript"}
@@ -78,7 +79,7 @@
             %div  
             %div{:style => "padding: 2px;"}
               %ul
-                %li <a href="/index">Main</a>
+                %li <a href="/">Main</a>
             %div{:style => "padding: 2px;"}
               %ul
                 %li <a href="/docs">Handouts/Documents</a>
