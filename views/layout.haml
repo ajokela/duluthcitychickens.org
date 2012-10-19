@@ -1,0 +1,107 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml", "xmlns:og" => "http://opengraphprotocol.org/schema/"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-type"}/
+    %title
+      Duluth City Chickens #{@title}
+      
+      %link{:href => "/stylesheets/style.css?body=1", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+      %script{:src => "/javascripts/niftycube.js?body=1", :type => "text/javascript"}
+      %script{:src => "/javascripts/lowpro.js?body=1", :type => "text/javascript"}
+      
+    :javascript
+      window.onload=function(){
+        Nifty("div#container");
+        Nifty("div#content,div#nav","same-height small");
+        Nifty("div#header,div#footer","small");
+      }
+
+  %body
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-10729744-11']);
+      _gaq.push(['_setDomainName', '.duluthcitychickens.org']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+        #fb-root
+    :javascript
+      window.fbAsyncInit = function() {
+        FB.init({appId: '137037462985334', status: true, cookie: true,
+                 xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script');
+        e.type = 'text/javascript';
+        e.src = document.location.protocol +
+          '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+      }());
+        #container
+      #header
+        %div{:style => "color: #fff; text-align: right; vertical-align: top;"}
+          %i "Duluth City Chickens: A group advocating for chicken raising in the city of Duluth, MN"
+        %div{:style => "text-align: left; padding: 10px;"}
+          %a{:href => "/"}= image_tag "logo.png", :style => 'border: 0px;'
+        %div{:style => "width: 100%; text-align: right; vertical-align: bottom;"}
+          :javascript
+                      %script{:src => "http://pagead2.googlesyndication.com/pagead/show_ads.js", :type => "text/javascript"}
+      #content
+        #main
+          %div{:style => "text-align: left;"}
+            %fb:like
+          %div{:style => "line-height: 130%;"}
+            = yield
+      #nav
+        %div{:style => "text-align: left; padding: 10px;"}
+          %div{:style => "text-align: right; float: right; width: 100%;"}
+            / AddThis Button BEGIN
+            :javascript
+              var addthis_config = {"data_track_clickback":true};            .addthis_toolbox.addthis_default_style{:style => "text-align: right;"}
+              %a.addthis_button_compact{:href => "http://addthis.com/bookmark.php?v=250&username=alexjokela"} Share
+              %span.addthis_separator |
+              %a.addthis_button_facebook
+              %a.addthis_button_myspace
+              %a.addthis_button_google
+              %a.addthis_button_twitter
+            %script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#username=alexjokela", :type => "text/javascript"}
+            / AddThis Button END
+          %div
+            %div  
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/index">Main</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/docs">Handouts/Documents</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/law">Ordinance & Law</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/faq">Frequently Asked Questions</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/press">DCC in the Press & Links</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/archive">Archive</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li
+                  <a href="/talking_points">Backyard Chickens</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li
+                  <a href="/gallery">Gallery</a>
+            %div{:style => "padding: 2px;"}
+              %ul
+                %li <a href="/contact">Contact Information</a>
+      #footer{:style => "text-align: center;"}
+        Copyright © 2007 - 2013 Duluth City Chickens
